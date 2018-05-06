@@ -1,0 +1,11 @@
+name: nix-backpack-problem
+version: 1.0.0
+license: BSD3
+license-file: LICENSE
+cabal-version: >= 1.18
+build-type: Simple
+
+executable example
+  build-depends: base < 5, primitive, primitive-containers
+  main-is: Main.hs
+  default-language: Haskell2010

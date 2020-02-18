@@ -34,6 +34,8 @@ with `cabal new-build` when I am not using `nix`. I suspect that the problem is
 that the different instantiations of the same indefinite module are somehow
 clobbering one another.
 
+The compiler can be selected with an argument like `--argstr compiler ghc844`.
+
 ## Original (Solved) Problem Description
 
 The repository is a minimal example that reproduces an error I encounter when

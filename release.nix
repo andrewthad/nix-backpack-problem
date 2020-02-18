@@ -1,9 +1,10 @@
+{ compiler ?  "ghc844" }:
 let
   config = {
     packageOverrides = pkgs: rec {
       haskell = pkgs.haskell // {
         packages = pkgs.haskell.packages // {
-          ghc841 = pkgs.haskell.packages.ghc841.override {
+          ${compiler} = pkgs.haskell.packages.${compiler}.override {
             overrides = haskellPackagesNew: haskellPackagesOld: rec {
               nix-backpack-problem =
                 haskellPackagesNew.callPackage ./default.nix { };
@@ -26,4 +27,4 @@ let
   pkgs = import <nixpkgs> { inherit config; };
 
 in
-  pkgs.haskell.packages.ghc841.nix-backpack-problem
+  pkgs.haskell.packages.${compiler}.nix-backpack-problem
